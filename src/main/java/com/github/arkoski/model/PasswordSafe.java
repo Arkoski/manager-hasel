@@ -8,7 +8,6 @@ public class PasswordSafe {
     private Map<Integer, PasswordEntry> data = new HashMap<Integer, PasswordEntry>();              //String serviceName
 
     public void add(Integer id, PasswordEntry passwordEntry){
-        passwordEntry.setId(id);
         data.put(id,passwordEntry);
     }
 

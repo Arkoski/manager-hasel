@@ -21,7 +21,7 @@ public class FileSafeController {
 
             String zapis = gson.toJson(entry.getValue());
 
-            FileUtils.write(path, zapis+"\n", true);
+            FileUtils.write(path, entry.getKey() + "_" + zapis + "\n", true);
             //        System.out.println("ID : " + entry.getKey() + " Value : " + entry.getValue());
         }
     }

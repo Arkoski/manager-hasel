@@ -2,7 +2,6 @@ package com.github.arkoski.model;
 
 public class PasswordEntry {
 
-    private Integer id;
     private String serviceName = "";
     private String login = "";
     private String password = "";
@@ -13,13 +12,6 @@ public class PasswordEntry {
         this.password = password;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getServiceName() {
         return serviceName;
