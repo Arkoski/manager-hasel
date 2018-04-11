@@ -14,6 +14,7 @@ public class FileSafeController {
     public void writeToFile(String plik, Map<Long, PasswordEntry> map) throws IOException {
         File path = new File(plik);
         Gson gson = new Gson();
+        FileUtils.write(path, "");
         for (Map.Entry<Long, PasswordEntry> entry : map.entrySet()) {
             String zapis = gson.toJson(entry.getValue());
 
@@ -48,18 +49,4 @@ public class FileSafeController {
         return ps;
     }
 
-
-    public static void main(String[] args) throws IOException {
-
-//        PasswordEntry pe1 = new PasswordEntry(1l,"wp1", "login1", new char[]{120,121,122});
-//        PasswordEntry pe2 = new PasswordEntry(2l,"wp2", "login2", new char[]{122,122,122});
-//
-//        ps.add(pe1);
-//        ps.add(pe2);
-//        //ps.printData();
-//
-//        writeToFile("baza.txt", ps.getData());
-        FileSafeController fsc = new FileSafeController();
-        fsc.readFileToPasswordSafe("baza.txt").printData();
-    }
 }
