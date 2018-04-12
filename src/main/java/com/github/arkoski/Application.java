@@ -30,6 +30,8 @@ public class Application {
         boolean loop = false;
 
         while (!loop) {
+            System.out.flush();
+            //System.console().flush();
             System.out.println("p - Koniec programu\n" +
                     "1 - Dodaj nowy wpis\n" +
                     "2 - Usun wpis\n" +

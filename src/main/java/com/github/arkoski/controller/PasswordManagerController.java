@@ -10,6 +10,8 @@ import java.util.Map;
 
 public class PasswordManagerController {
 
+    private PasswordSafe passwordSafe;
+
     public void addNewRecord(PasswordSafe passwordSafe, String serviceName, String login, char[] password) throws IOException {
 
         long firstFreeId = passwordSafe.getData().keySet().stream().mapToLong(l -> l).max().orElse(0L) + 1;

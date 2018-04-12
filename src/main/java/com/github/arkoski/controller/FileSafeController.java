@@ -11,6 +11,8 @@ import java.util.Map;
 
 public class FileSafeController {
 
+
+
     public void writeToFile(String plik, Map<Long, PasswordEntry> map) throws IOException {
         File path = new File(plik);
         Gson gson = new Gson();
@@ -20,22 +22,27 @@ public class FileSafeController {
 
             FileUtils.write(path, zapis + "\n", true);
         }
+        FileCrypter.encrypt();
     }
 
     public void writeSingleRecordToFile(String plik, PasswordEntry passwordEntry) throws IOException {
+        FileCrypter.decrypt();
         File path = new File(plik);
         Gson gson = new Gson();
         String zapis = gson.toJson(passwordEntry);
         FileUtils.write(path, zapis + "\n", true);
+        FileCrypter.encrypt();
     }
 
 
     public PasswordSafe readFileToPasswordSafe(String plik) throws IOException {
+        FileCrypter.decrypt();
         File path = new File(plik);
         String odczyt = FileUtils.readFileToString(path);
         //System.out.println(odczyt);
         String[] array = odczyt.split("\n");
         //System.out.println(Arrays.toString(array));
+        FileCrypter.encrypt();
         return arrayToPasswordSafe(array);
     }
 

@@ -24,4 +24,14 @@ public class PasswordSafe {
             System.out.println("ID : " + entry.getKey() + " Value : " + entry.getValue());
         }
     }
+
+//    public void addEntry(String service, String login, char[] password) {
+//        entries.put(nextId, PasswordEntry.Builder.create()
+//                .withId(nextId)
+//                .withLogin(login)
+//                .withService(service)
+//                .withPassword(password)
+//                .build());
+//    }
+
 }
